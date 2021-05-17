@@ -1,5 +1,6 @@
 # Text-Adventure
-A mobile and desktop friendly Text Adventure website.
+A mobile and desktop friendly Text Adventure website.\
+Can be accessed at https://text-adventure.micahwar.repl.co/
 ## To Do
 [x] CLI\
 &nbsp;&nbsp;[x] put CLI functions and data into separate class\
