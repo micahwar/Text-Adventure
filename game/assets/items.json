@@ -1,0 +1,584 @@
+{
+  "plantPot": {
+    "names": [
+      "plantPot",
+      "plantpot",
+      "plant",
+      "pot"
+    ],
+    "holdable": false,
+    "contents": [
+      "key"
+    ],
+    "actions": {
+      "inspect": {
+        "subtext": "Looking closely at the pot, you notice a rusty key poking out from under the cracked ceramic",
+        "resultantActions": false
+      }
+    }
+  },
+  "key": {
+    "names": [
+      "key"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You think to yourself \"wouldn't it be lovely if this unlocked something..?\" Waait... Maybe it does!"
+      },
+      "pickup": {
+        "subtext": "You snuggly slide the key into your pocket."
+      },
+      "use": {
+        "required": [
+          "key"
+        ],
+        "subtext": "You insert the key into the lock, turn the key and push the door slowly open...",
+        "resultantActions": [
+          "rooms lounge locked",
+          false
+        ]
+      }
+    }
+  },
+  "door": {
+    "names": [
+      "door"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You take a close look at the door, noticing the gnarled lines in the wood and the decidably new looking lock..."
+      },
+      "open": {
+        "names": [
+          "open",
+          "unlock"
+        ],
+        "required": [
+          "key"
+        ],
+        "subtext": "You insert the key into the lock, turn the key and push the door slowly open...",
+        "resultantActions": [
+          "rooms lounge locked",
+          false
+        ]
+      }
+    }
+  },
+  "buzzer": {
+    "names": [
+      "buzzer"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You peer at the button and get a sinking feeling in your stomach..."
+      },
+      "press": {
+        "names": [
+          "push",
+          "press",
+          "touch"
+        ],
+        "subtext": "As soon as you press the button a loud screeching sound emanates from the upstairs and an flock of ravens scream away into the sky.\n\t--HARD MODE--"
+      }
+    }
+  },
+  "leftHedge": {
+    "names": [
+      "lefthedge"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "Looking at the hedge, you think you can make out a path through the middle..."
+      },
+      "cut": {
+        "names": [
+          "chop",
+          "cut"
+        ],
+        "required": [
+          "shears"
+        ],
+        "subtext": "Taking out your shears, you make quick work of the branches lying in the way of the path, giving way to the garden beyond.",
+        "resultantActions": [
+          "rooms leftGardenBottom locked",
+          false
+        ]
+      }
+    }
+  },
+  "rightHedge": {
+    "names": [
+      "rightHedge"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You take a look at the hedge and notice the growths of branches covering the path"
+      },
+      "cut": {
+        "names": [
+          "chop",
+          "cut"
+        ],
+        "required": [
+          "shears"
+        ],
+        "subtext": "Taking out your shears, you make quick work of the branches lying in the way of the path, giving way to the garden beyond.",
+        "resultantActions": [
+          "rooms leftGardenBottom locked",
+          false
+        ]
+      }
+    }
+  },
+  "tvbutton": {
+    "names": [
+      "button",
+      "tvbutton"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You peer at the button and get a sinking feeling in your stomach..."
+      },
+      "press": {
+        "names": [
+          "push",
+          "press",
+          "touch"
+        ],
+        "subtext": "You press the button and the TV stops flickering for a few seconds before turning back on."
+      }
+    }
+  },
+  "tv": {
+    "names": [
+      "tv",
+      "television"
+    ],
+    "holdable": false,
+    "contents": [
+      "tvbutton"
+    ],
+    "actions": {
+      "inspect": {
+        "subtext": "You take a closer look at the tv - a lies on the left side of the screen and the top is coated in a thick layer of dust"
+      },
+      "turn": {
+        "names": [
+          "switch",
+          "turn"
+        ],
+        "subtext": "You reach forward and press what you assume should be the power button on the set.\nThe TV briefly turns off before returning to its occaisonal flicker."
+      }
+    }
+  },
+  "sofa": {
+    "names": [
+      "sofa",
+      "couch"
+    ],
+    "holdable": false,
+    "contents": [
+      "coin"
+    ],
+    "actions": {
+      "inspect": {
+        "subtext": "Taking a look at the sofa you think you can see a coin slid down between the aged cushions, although judging by the state of the covers you're not sure how keen you are on retrieving it..."
+      },
+      "sit": {
+        "names": [
+          "sitdown",
+          "siton",
+          "sit"
+        ],
+        "subtext": "You spend a few seconds psyching yourself and you hear your own voice: \"come on Ralph, you've got this, mum would be proud!\". You finally find the courage to gingerly sit down and... Nothing happens. Maybe it was just a sofa after all?",
+        "resultantActions": [
+          "items sofa actions sit subtext",
+          "Maybe you should focus on something else..."
+        ]
+      }
+    }
+  },
+  "table": {
+    "names": [
+      "coffeetable",
+      "table"
+    ],
+    "holdable": false,
+    "contents": [
+      "magazines",
+      "coffeemug"
+    ],
+    "actions": {
+      "inspect": {
+        "subtext": "You walk over to the coffee table and peer down at its contents. To the left you can make out a half drunk mug of coffee and Scattered on the wood, you see a selection of magazines."
+      },
+      "press": {
+        "names": [
+          "push",
+          "press",
+          "touch"
+        ],
+        "subtext": "You press the button and the TV stops flickering for a few seconds before turning back on."
+      }
+    }
+  },
+  "coffeemug": {
+    "names": [
+      "mug",
+      "coffee",
+      "coffeemug"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You see something that looks like it could be the love child of a smurf and the grinch sitting on the surface of the liquid and immediately regret taking a closer look."
+      },
+      "drink": {
+        "subtext": "Thinking it would make it go down easier, you down the whole mug in one but you realise your mistake during the 5 seconds it takes for it to slowly slide down your throat. Despite its unwelcoming looks it seems like it's had a positive effect: you feel lighter, more well rested and have a sudden urge to hug someone... Hug? huh...",
+        "resultantActions": [
+          "items coffeemug actions drink subtext",
+          "The empty mug stares back at you with an amused expression."
+        ]
+      }
+    }
+  },
+  "magazines": {
+    "names": [
+      "magazine",
+      "magazines",
+      "mag"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "Looking at the assortment of magazines, you're surprised at the range: from politicals published in the 80s that you quickly skip over to magazines that would have had even Trisha from secondary blushing..."
+      },
+      "pickup": {
+        "subtext": "You slightly overestimated the size of your pockets but the magazine fits eventually. Maybe you can use it when you get out of here..."
+      }
+    }
+  },
+  "coin": {
+    "names": [
+      "coin"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You hold it up to the window and see it's a 1998 50p coin! Sweet!"
+      },
+      "pickup": {
+        "subtext": "You slip the coin into your pocket. It's gunna go amazingly with your collection at home!"
+      }
+    }
+  },
+  "footprint": {
+    "names": [
+      "footprint",
+      "print",
+      "footprints",
+      "prints"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You kneel down to take a close look at the footprints and see the outlines for 3 normal, roughly 5 inch long toes. You double take... That's not normal, wtf... You feel more uneasy about this than you had before."
+      },
+      "lick": {
+        "subtext": "It gives off a muddy taste, slightly metallic too, almost like Aunt Edna's potato fry up and you *do* seem to recall it being the same level of dirt content..."
+      }
+    }
+  },
+  "teamug": {
+    "names": [
+      "teamug",
+      "tea",
+      "mug"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You look at the tea and... Well, to say it looks like tea would be far too complementary..."
+      },
+      "drink": {
+        "subtext": "You take a delicate sip and immediately set it back down, cursing yourself for even bringing it near your face.",
+        "next": "After the last drink, you decide maybe this one isn't a good idea...",
+        "resultantActions": [
+          "items teamug actions drink subtext",
+          "The empty mug reminds you that you've already made that particular mistake."
+        ]
+      }
+    }
+  },
+  "pendant": {
+    "names": [
+      "pendant",
+      "necklace",
+      "charm"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You take a look at the charm and marvel at the craftsmanship; intricate blue lines contour the face of the gem and the chain itself gives off a gentle shimmer that helps to put your heart somewhat at ease."
+      },
+      "pickup": {
+        "subtext": "You slip the pendant over your head using the chain attached and immediately feel a boost in confidence.",
+        "resultantActions": [
+          "rooms hallway locked",
+          false
+        ]
+      }
+    }
+  },
+  "sink": {
+    "names": [
+      "sink"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "Peering a little closer at the sink, you can make out stains of various colours, shapes and sizes... You decide to step back before you add your own."
+      }
+    }
+  },
+  "cupboard": {
+    "names": [
+      "cupboard",
+      "cupboards"
+    ],
+    "holdable": false,
+    "contents": [
+      "pendant",
+      "bleach",
+      "wipes"
+    ],
+    "actions": {
+      "inspect": {
+        "names": [
+          "open"
+        ],
+        "subtext": "You open the door of the cupboard with a tug and peer at its contents. Standing in the cupboard you see a bottle of bleach, some wipes, and a strange looking pendant."
+      },
+      "kick": {
+        "subtext": "You swing your boot straight through the cupboard door, showering splinters everywhere and thankfully only leaving a small bruise on your shin. You smile, feeling very please with yourself",
+        "resultantActions": [
+          "items cupboard actions kick subtext",
+          "Still feeling the bruise from the last swing, you decide not to risk it again."
+        ]
+      }
+    }
+  },
+  "bleach": {
+    "names": [
+      "bleach"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "The bottle of bleach sure is looking very enticing..."
+      },
+      "drink": {
+        "subtext": "Don't be stupid."
+      }
+    }
+  },
+  "wipes": {
+    "names": [
+      "wipes",
+      "wipe"
+    ],
+    "holdable": true,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You look at the wipes and... well they're just wipes"
+      },
+      "pickup": {
+        "subtext": "An addition for your on the move spring cleaning equipment!"
+      }
+    }
+  },
+  "bedroomLight": {
+    "names": [
+      "light"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You lean in to look closer at the light before realising 1. you don't know where it is, and 2. you woudn't be able to see it even if you did."
+      },
+      "press": {
+        "names": [
+          "push",
+          "press",
+          "switchon",
+          "turnon"
+        ],
+        "subtext": "You fumble around for the light switch, eventually finding it and flooding the room in an orange glow. It gently reminds you how tired you are; maybe you should have a lie down?",
+        "resultantActions": [
+          [
+            "rooms hallway exits east",
+            "bedroom"
+          ],
+          [
+            "rooms bedroom locked",
+            false
+          ]
+        ]
+      }
+    }
+  },
+  "bed": {
+    "names": [
+      "bed"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "The bed's sheets display a questionable level of hygeine - stains cover what you presume used to be a white sheet and the covers are torn, with bite marks lining the edges."
+      },
+      "lie": {
+        "names": [
+          "liedown",
+          "sitdown",
+          "sit",
+          "lieon",
+          "siton",
+          "sleep"
+        ],
+        "subtext": "You swing yourself onto the bed and lie down, facing the ceiling, staring at the shadows in the cracks. You feel a sense of drowsyness overcome you and decide to rest.\n\tWhen you wake up you feel worse than before, slowly opening your eyes only to come face to face with a black, shadowy visage. It flees upstairs leaving you to get out of bed shakily.",
+        "resultantActions": [
+          [
+            "items bed actions lie subtext",
+            "You shudder at even the thought of going to sleep again before getting out of here."
+          ],
+          [
+            "rooms loft locked",
+            false
+          ]
+        ]
+      }
+    }
+  },
+  "drawer": {
+    "names": [
+      "drawer"
+    ],
+    "holdable": false,
+    "contents": [
+      "torch"
+    ],
+    "actions": {
+      "inspect": {
+        "subtext": "Looking closely at the drawer, you see that the wood is starting to rot, with chunking coming off when you brush your hand against it."
+      },
+      "open": {
+        "subtext": "You pull open the drawer and it collapses under its own weight, leaving a pile of rotting wood in a heap by the side of the bed.",
+        "resultantActions": [
+          "items drawer actions open subtext",
+          "Not sure how you're gunna do that..."
+        ]
+      }
+    }
+  },
+  "comics": {
+    "names": [
+      "comic",
+      "comics"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "You peer down at the floor and look closer at the comics: batman, superman, all DC comics for some reason..."
+      }
+    }
+  },
+  "chest": {
+    "names": [
+      "chest",
+      "box"
+    ],
+    "holdable": false,
+    "contents": [
+      "creature"
+    ],
+    "actions": {
+      "inspect": {
+        "names": [
+          "open",
+          "inspect"
+        ],
+        "subtext": "You the lid of the chest slowly and stare at the... creature that is lying inside. It looks like it could have been human a number of years ago: a few strands of grey hair remain on its head and a loose hanging brown top covers its shrunken body. A set of empty blue eyes look blankly up at you and blink in slow recognition as you stare on.",
+        "resultantActions": [
+          [
+            "items chest actions close",
+            {
+              "names": [
+                "close",
+                "shut"
+              ],
+              "subtext": "You shut the box quickly, your heartrate off the charts as you wonder what the hell that thing was. You hear a car in the distance and jump as you realise this could be your chance.\n\tYou rush downstairs and fly out the door, elated at your escape! Jumping with joy you open the gate and take a look at the car that's out front: a black volvo. You look straight into the eyes of the man who just got out... <b>Your</b> eyes... A spitting image of you... As your vision darkens you hope to god you're not right about the creature in the box...",
+              "resultantActions": [
+                [
+                  "end",
+                  1
+                ]
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "creature": {
+    "names": [
+      "creature",
+      "person"
+    ],
+    "holdable": false,
+    "contents": false,
+    "actions": {
+      "inspect": {
+        "subtext": "The creature continues to stare up at you, slowly shifting his gaze over your body..."
+      },
+      "attack": {
+        "names": [
+          "hit",
+          "attack",
+          "kick",
+          "punch",
+          "slap",
+          "push"
+        ],
+        "subtext": "As you ready yourself, the creature leaps up and starts hissing hideously, an eerie screach coming from its mouth as it glares at you. You try to slowly back away but it leaps forward and sinks its teeth into your arm. You feel your body aging and your hair greying as you're quickly stuffed into the box; a distance rumble of a car can be heard in the distance...",
+        "resultantActions": [
+          "end",
+          0
+        ]
+      }
+    }
+  }
+}

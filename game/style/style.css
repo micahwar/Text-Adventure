@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'VGADOS';
+    src: url('../../fonts/Perfect DOS VGA 437 Win.ttf');
+}
+ 
+body {
+  background-color: black;
+}
+
+html, body {
+  height: 100%;
+}
+
+#gridBox{
+  background-color: black;
+  caret-color: black;
+  color: white;
+  font-family: 'VGADOS';
+  padding-left: 5px;
+  cursor: default;
+  font-size: 20px;
+  width: 800px;
+  height: 60%;
+  max-height: 60%;
+}
+
+#textbox {
+  max-height: 90%;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+}
+
+#cli {
+  display: inline;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+#androidInput {
+  color: black;
+}
+
+#androidInput:focus, #cli:focus{
+  outline: none;
+}
+
+
+/* special styling for mobile / smaller screen devices */
+@media (max-height: 500px) {
+  #gridBox {
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  #gridBox {
+    max-width: 100%;
+  }
+}

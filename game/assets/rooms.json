@@ -1,0 +1,147 @@
+{
+  "frontGate": {
+    "exits": {
+      "north": "frontGarden"
+    },
+    "subtext": "As you open your eyes, you see a small bungalow, surrounded by an overgrown garden. You can't remember how you got there but your arm is throbbing from what feels like a bee sting and a mossy path leads to the north."
+  },
+  "frontGarden": {
+    "exits": {
+      "south": "frontGate",
+      "west": "leftGardenBottom",
+      "east": "rightGardenBottom",
+      "north": "frontDoor"
+    },
+    "items": [
+      "leftHedge",
+      "rightHedge"
+    ],
+    "subtext": "Inspecting the garden, paths to your east and west seem unreachable due to a haze of green shrubbery and your path leads north towards a rotting door."
+  },
+  "frontDoor": {
+    "exits": {
+      "south": "frontGarden",
+      "north": "lounge"
+    },
+    "items": [
+      "plantPot",
+      "door",
+      "buzzer"
+    ],
+    "subtext": "You come up to the door, your sodden shoes leaving footprints on the step. To the left of the door lies a buzzer and at your feet you notice a plant pot, its contents long dead."
+  },
+  "leftGardenBottom": {
+    "exits": {
+      "east": "frontGarden",
+      "north": "leftGardenTop"
+    },
+    "items": {},
+    "locked": "The few minutes you spend trying to get through the branches only give you scratches to show for it.",
+    "subtext": "They really should employ a gardener, the place looks like it needs it. The garden extends to the north and a passage leads to the front garden to your east."
+  },
+  "rightGardenBottom": {
+    "exits": {
+      "north": "rightGardenTop",
+      "west": "A blackberry bush lies at the corner of the garden. You didn't think they were in season this time of year; what time of year even is it?"
+    },
+    "items": {},
+    "locked": "A few attempts at making your way through the knot of bushes later, you decide that maybe that wasn't the right way ater all.",
+    "subtext": "A blackberry bush lies at the corner of the garden. You didn't think they were in season this time of year... What time of year even is it...? You struggle to remember. The garden extends to the north and a passage leads to the front garden to your west."
+  },
+  "leftGardenTop": {
+    "exits": {
+      "east": "backGarden",
+      "south": "leftGardenBottom"
+    },
+    "items": {},
+    "subtext": "Barely visible through the foliage, you can make out a box in the corner of the garden. To your east lies the rear garden and to the south, the path extends towards the front of the house."
+  },
+  "rightGardenTop": {
+    "exits": {
+      "west": "backGarden",
+      "south": "rightGardenBottom"
+    },
+    "items": {},
+    "subtext": "You don't... think you see anything? To your west lies the rear garden and, to the south, the parth extends towards the front of the house."
+  },
+  "backGarden": {
+    "exits": {
+      "west": "leftGardenTop",
+      "east": "rightGardenTop",
+      "south": "hallway"
+    },
+    "items": {},
+    "subtext": "The house blocks what little amount of sunlight there was at the front and the plants all seem to shrink away from the rear wall of the building. A barley-white door lies ajar to your south and paths lead to the side gardens at your east and west.",
+    "locked": "You try to open the back door but it won't budge."
+  },
+  "hallway": {
+    "exits": {
+      "north": "backGarden",
+      "south": "lounge",
+      "east": "bedroomLight",
+      "west": "loft",
+      "up": "loft"
+    },
+    "items": {},
+    "subtext": "As you move through the hallway, you see paintings lining the walls - portraits of people you don't know... let's keep it that way. The back door lies ajar to your north, to your east lies a bedroom, to your south the lounge and to your west you notice a narrow stairwell leading into an attic you didn't notice from the outside.",
+    "locked": "A dark shadow hangs over the hallway, slowly shifting as you stare into it; maybe we should come back with some form of protection..."
+  },
+  "bedroomLight": {
+    "exits": {
+      "west": "hallway",
+      "east": "bedroom"
+    },
+    "items": [
+      "bedroomLight"
+    ],
+    "subtext": "You step into the bedroom and almost trip over your own feet in the dark. There should be a switch around here somewhere... To your west lies the hallway."
+  },
+  "bedroom": {
+    "exits": {
+      "west": "hallway"
+    },
+    "items": [
+      "bed",
+      "drawer",
+      "comics"
+    ],
+    "subtext": "Looking around, the bedroom seems unnaturally empty: a bed lines the wall to the left, a bedside drawer alongside it, and old comics are scattered on the floor. To your west lies the hallway.",
+    "locked": "You decide against moving around in the dark; the nearest A&E could be miles away..."
+  },
+  "lounge": {
+    "exits": {
+      "north": "hallway",
+      "south": "frontGarden",
+      "west": "kitchen"
+    },
+    "items": [
+      "sofa",
+      "table",
+      "footprint",
+      "tv"
+    ],
+    "subtext": "You walk into the lounge. A flicker of static appears on a TV the opposite side of the room every few seconds and a sofa, stained with age, lies opposite. A coffee table with various scattered items rests inbetween and you notice... muddy footprints on the wooden floor. To your north lies the hallway, south the front door and to your east you can see the tiles of a kitchen.",
+    "locked": "You pull down on the door handle but it bites back with a click as the lock stops you from entering."
+  },
+  "kitchen": {
+    "exits": {
+      "east": "lounge"
+    },
+    "items": [
+      "teamug",
+      "cupboard",
+      "sink"
+    ],
+    "subtext": "The tiles on the walls and floor all seem faded with use and coloured stains along the worksurfaces almost make you gag. A half-drunk mug of cold tea sits on the side and a couple cupboards lie under a well-used sink."
+  },
+  "loft": {
+    "exits": {
+      "down": "hallway"
+    },
+    "items": [
+      "chest"
+    ],
+    "subtext": "As you slowly creep up the stairs, failing to keep any semblance of silence, you try to convince yourself that you don't see footprints on the dust covered steps... The loft itself is only visible thanks to the cracks in the insulation; the light gives view to an old chest in the centre of the space, antique, you think. The stairwell leads back down to the hallway.",
+    "locked": "You lift your foot to go upstairs but it does seem mighty dark up there... Some rest would definitely help."
+  }
+}

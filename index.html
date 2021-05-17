@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>repl.it</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      </script>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <div id='container' class="container-fluid d-flex">
+         <div class="row flex-fill h-100">
+            <div id="game" class="col-md-6 text-center" data-src="images/house2.jpg">
+               <div class="text">
+                  <p> Text Adventure</p>
+                  <a class="btn btn-outline-primary rounded-pill" href="game/index.html"><span class="button-text" > Go To Page</span></a>
+               </div>
+            </div>
+            <div id="admin" class="col-md-6 text-center" data-src="images/code2.jpeg">
+               <div class="my-auto">
+                  <div class="text">
+                     <p> Admin Panel</p>
+                     <a class="btn btn-outline-primary rounded-pill" href="admin/index.html"><span class="button-text" > Go To Page</span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+          // loads lower resolution images as placeholders
+          // while higher resolution images take their time loading
+         (() => {
+             'use strict';
+             const objects = document.querySelectorAll('div[class^="col-md"]');
+             Array.from(objects).map((item) => {
+                 const img = new Image();
+                 img.src = item.dataset.src;
+                 img.onload = () => {
+                     item.classList.remove('asyncImage');
+                     return addCSS(`#${item.id}::before {background: url(${item.dataset.src}) no-repeat;background-size: cover;}`)
+                 };
+             });
+         })();
+
+         // all of the following handles hover events and changes bootstrap
+         // of the grid elements accordingly
+         
+         function addCSS(string) {
+           let css = string,
+           head = document.head || document.getElementsByTagName('head')[0],
+           style = document.createElement('style');
+         
+           head.appendChild(style);
+           style.type = 'text/css';
+           style.appendChild(document.createTextNode(css));
+         }
+         
+         
+         let colSizes = [5, 7];
+         
+         // switches the sizes of the boxes
+         function toggleClasses() {
+           ["admin", "game"].forEach((id) => {
+             document.getElementById(id).classList.toggle("col-md-" + colSizes[0]),
+             document.getElementById(id).classList.toggle("col-md-" + colSizes[1]);
+           });
+         }
+         
+         function firstToggle(ids, nums) {
+           document.getElementById(ids[0]).classList.toggle("col-md-" + nums[0]);
+           document.getElementById(ids[1]).classList.toggle("col-md-" + nums[1]);
+         }
+         
+
+         function onHover(idNames, e) {
+             // checks if this is the first hover event since page load
+             // i.e. if both boxes are same size
+           if (e.srcElement.className.indexOf("col-md-6") > -1) {
+               // removes initial bootstrap
+             firstToggle(["game", "admin"], [6, 6]);
+                // adds bootstrap for new grid sizes
+             firstToggle([idNames[0], idNames[1]], colSizes);
+           } else if (e.srcElement.className.indexOf("col-md-" + colSizes[0]) > -1) {
+               // just switches sizes if not first hover
+             toggleClasses();
+           }
+         }
+         
+        // establishes mouse events for grid elements
+
+         document.getElementById("game").addEventListener("mouseover", (e) => onHover(["admin", "game"], e));
+         document.getElementById("admin").addEventListener("mouseover", (e) => onHover(["game", "admin"], e));
+         
+         document.getElementsByTagName('body')[0].addEventListener("mouseleave", (e) => {
+           document.getElementById("game").className = "col-md-6 text-center";
+           document.getElementById("admin").className = "col-md-6 text-center";
+         });
+         
+      </script>
+   </body>
+</html>

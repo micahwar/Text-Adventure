@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+</head>
+<!-- very rudimentary page used to generate JSON information
+for rooms-->
+<body>
+	<script>
+		let name, subtext, exitDir, exitRoom, out;
+		window.addEventListener("load", (e) => {
+      name = document.getElementById("name");
+      subtext = document.getElementById("subtext");
+      exitDir = document.getElementById("direction");
+      exitRoom = document.getElementById("room");
+      out = document.getElementById("output");
+    });
+    let rooms = {};
+    
+
+    function create() {
+      rooms[name.value] = {};
+      rooms[name.value]["exits"] = {};
+      rooms[name.value]["items"] = {};
+      rooms[name.value]["subtext"] = subtext.value;
+      output.innerHTML = JSON.stringify(rooms, undefined, 4);
+    }
+
+    function addExit() {
+      rooms[name.value]["exits"][exitDir.value] = exitRoom.value;
+      output.innerHTML = JSON.stringify(rooms, undefined, 4);
+    }
+	</script>
+	Room Name: <input id = "name"/><br />
+  Flavour Text: <input id = "subtext"/> <br />
+  <button id="create" onclick="create()">create</button><br />
+  Exit: <input id = "direction"/><input id = "room"/>
+  <button id="addExit" onclick = "addExit()" >add</button><br />
+  <br /><br /><br />
+  <pre id = "output"> </pre>
+  
+</body>
+
+</html>

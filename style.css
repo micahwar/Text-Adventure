@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'VGADOS';
+    src: url('../../fonts/Perfect DOS VGA 437 Win.ttf');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.row { 
+  min-height:100vh;
+  display: flex;
+  flex-direction: row;
+  
+
+}
+
+#game, #admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: VGADOS, courier;
+  background-color: black;
+  z-index: 1;
+}
+
+
+#game::before {
+  background: url("images/house.jpg") no-repeat;
+  background-size: cover;
+  opacity: .7; 
+}
+
+#admin::before {
+  background: url("images/code.jpeg") no-repeat;
+  background-size: cover;
+  opacity: .5; 
+}
+
+#game::before, #admin::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  
+  z-index: -1;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 6vh;
+}
+
+a[class^="btn"] {
+  border: 3px solid;
+  font-size: 3vh;
+  font-weight: 600;
+}
+
+
+div[class*="col-md-"] {
+  flex-grow: 1;
+  flex-shrink: 1;
+  transition: all 500ms ease;
+}
