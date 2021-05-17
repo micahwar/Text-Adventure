@@ -1,5 +1,5 @@
 # Text-Adventure
-A mobile and desktop friendly Text Adventure website.\
+A mobile (android but not IOS) and desktop friendly Text Adventure website.\
 Can be accessed at https://micahwar.github.io/Text-Adventure/
 ## To Do
 [x] CLI\
